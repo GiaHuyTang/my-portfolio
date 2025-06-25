@@ -40,6 +40,7 @@ git clone https://github.com/GiaHuyTang/my-portfolio.git
 
 # Navigate into the project directory
 cd my-portfolio
+cd client
 
 # Install dependencies
 npm install
