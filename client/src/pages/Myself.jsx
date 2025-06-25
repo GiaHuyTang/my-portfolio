@@ -34,7 +34,7 @@ function Myself() {
                 <h3 className="mt-4">Education</h3>
                 <p className="card-text">
                   Saskatchewan Polytechnic <br />
-                  Diploma in Computer Systems Technology (2024–2027)
+                  Diploma in Business Information System (2024–2027)
                 </p>
               </div>
             </div>
