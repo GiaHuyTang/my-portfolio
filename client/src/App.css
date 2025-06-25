@@ -1,0 +1,565 @@
+/* ----- Global Styles ----- */
+:root {
+  font-family: 'MinecraftFont', sans-serif;
+  color: #ffffff;
+  background-color: #16164d;
+  cursor: url('./assets/mod_cursors/cursor.cur'), auto;
+
+  --dark-bg: #16164d;
+  --nav-bg: #5050d0;
+  --primary: #4646cc;
+  --secondary: #7474e8;
+  --highlight: #b8b8ef;
+  --white: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: visible; /* make sure it's NOT hidden */
+  position: relative;
+  z-index: 0;
+}
+
+.content {
+  flex: 1;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.taskbar_container,
+.taskbar_menu,
+.scroll-to-top {
+  will-change: transform, opacity;
+}
+
+
+a,
+button:hover {
+  cursor: url('./assets/mod_cursors/anchor_cursor.cur'), auto;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(to bottom,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.05) 3px);
+  z-index: 999;
+}
+
+@font-face {
+  font-family: 'PixelFont';
+  src: url('./assets/fonts/PixelFont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MinecraftFont';
+  src: url('./assets/fonts/MinecraftFont.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'PixelFont_inline';
+  src: url('./assets/fonts/PixelFont_inline.ttf') format('truetype');
+}
+
+/* ----- Taskbar Desktop Layout ----- */
+.taskbar_gif {
+  height: 10rem;
+  object-fit: cover;
+  margin-right: -10rem;
+  background: transparent;
+}
+
+.taskbar_container {
+  position: sticky;
+  top: 0;
+  background-color: var(--nav-bg);
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 0 4px var(--dark-bg);
+  border-radius: 0;
+  padding: 1em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 2000;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.taskbar_container h1 a {
+  font-size: 2rem;
+  transition: font-size 0.3s ease;
+}
+
+.taskbar_toggle,
+.taskbar_menu,
+.tagline {
+  transition: all 0.3s ease, opacity 0.3s ease, max-height 0.3s ease;
+  max-height: 100px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.taskbar_container.collapsed .taskbar_gif,
+.taskbar_container.collapsed .taskbar_toggle,
+.taskbar_container.collapsed .taskbar_menu,
+.taskbar_container.collapsed .tagline {
+  opacity: 0;
+  max-height: 0;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+
+.taskbar_container h1 a {
+  position: relative;
+  text-decoration: none;
+  color: var(--highlight);
+  font-family: 'PixelFont';
+  font-size: 2rem;
+  text-shadow: 1px 1px var(--primary);
+  z-index: 2;
+}
+
+.taskbar_container h1 {
+  padding-top: 0.5em;
+}
+
+.dancing-text span {
+  display: inline-block;
+  animation: dance 1.5s infinite ease-in-out;
+}
+
+.dancing-text span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dancing-text span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.dancing-text span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.dancing-text span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.dancing-text span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.dancing-text span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.dancing-text span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.dancing-text span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+.dancing-text span:nth-child(9) {
+  animation-delay: 0.8s;
+}
+
+.dancing-text span:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+.dancing-text span:nth-child(11) {
+  animation-delay: 1s;
+}
+
+.dancing-text span:nth-child(12) {
+  animation-delay: 1.1s;
+}
+
+.dancing-text span:nth-child(13) {
+  animation-delay: 1.2s;
+}
+
+.dancing-text span:nth-child(14) {
+  animation-delay: 1.3s;
+}
+
+.dancing-text span:nth-child(15) {
+  animation-delay: 1.4s;
+}
+
+.dancing-text span:nth-child(16) {
+  animation-delay: 1.5s;
+}
+
+@keyframes dance {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 3rem;
+  right: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.2rem;
+  font-family: 'MinecraftFont', sans-serif;
+  color: var(--white);
+  background-color: var(--primary);
+  border: 2px solid var(--highlight);
+  box-shadow: 2px 2px 0 var(--dark-bg);
+  z-index: 1500;
+  cursor: url('./assets/mod_cursors/anchor_cursor.cur'), auto;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1);
+  background-color: var(--secondary);
+  color: var(--dark-bg);
+}
+
+.tagline {
+  position: relative;
+  top: -1em;
+  left: 1.2em;
+  font-size: 1rem;
+  color: var(--white);
+  margin-top: 0.3em;
+  opacity: 0;
+  animation: fadeInTagline 0.6s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInTagline {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.taskbar_menu a i {
+  margin-bottom: 0.27em;
+}
+
+.taskbar_menu a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.7em;
+  text-decoration: none;
+  background-color: var(--primary);
+  color: var(--white);
+  border: 2px solid var(--highlight);
+  padding: 0.75em 1em;
+  font-size: 1.2rem;
+  font-family: 'MinecraftFont';
+  transition: all 0.2s ease-in-out;
+  box-shadow: 2px 2px 0 #2e2e8c;
+}
+
+.taskbar_menu a:hover {
+  background-color: #7474e8;
+  color: #000000;
+  border: 2px solid #b8b8ef;
+  box-shadow: 4px 4px 0 #16164d;
+  transform: translate(-2px, -2px);
+}
+
+/* ----- Sidebar Menu ----- */
+.taskbar_menu {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 70%;
+  background-color: var(--nav-bg);
+  flex-direction: column;
+  padding: 2em 1.5em;
+  gap: 1.5em;
+  transition: right 0.3s ease-in-out;
+  z-index: 9999;
+  opacity: 0.95;
+  border-left: 4px solid var(--primary);
+  overflow-y: auto;
+}
+
+/* Sidebar open state */
+.taskbar_open .taskbar_menu {
+  right: 0;
+  max-height: none;
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  overflow-y: auto;
+}
+
+/* ----- Responsive Styles (Mobile First) ----- */
+.taskbar_toggle {
+  color: #e5e547;
+  border: 2px solid #ffffff;
+  background-color: #2e2e8c;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.3em 0.6em;
+  font-family: 'MinecraftFont';
+  box-shadow: 2px 2px 0 #16164d;
+  transition: all 0.2s ease-in-out;
+  z-index: 1001;
+}
+
+.taskbar_toggle:hover {
+  background-color: #7474e8;
+  color: #000000;
+  border: 2px solid #b8b8ef;
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 #16164d;
+}
+
+.close_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-color: var(--highlight);
+  color: var(--dark-bg);
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 0 2px #000;
+  font-family: 'PixelFont', sans-serif;
+  cursor: pointer;
+  z-index: 1100;
+  transition: transform 0.1s ease-in-out;
+}
+
+.close_btn:hover {
+  transform: scale(1.1);
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+.introduction, .myself-section{
+  padding-top: 2em;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.cozy-room {
+  max-width: 400px;
+  width: 100%;
+  image-rendering: pixelated;
+  transition: transform 0.3s ease;
+}
+
+.cozy-room:hover {
+  transform: scale(1.03);
+}
+
+.walking-wrapper {
+  position: relative;
+  height: 15em;
+  overflow: hidden;
+  margin-top: -2em;
+}
+
+.walking-character {
+  position: absolute;
+  bottom: 0;
+  left: -120px;
+  height: 12em;
+  animation: walkAcross 8s linear infinite;
+}
+
+.walking-character img {
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+@keyframes walkAcross {
+  0% {
+    left: -120px;
+  }
+
+  100% {
+    left: 100vw;
+  }
+}
+
+.site-footer {
+  background-color: var(--nav-bg);
+  color: var(--white);
+  padding-bottom: 0.3em;
+  text-align: center;
+  font-family: 'MinecraftFont';
+  font-size: 1rem;
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 -4px 0 0 var(--dark-bg);
+
+  image-rendering: pixelated;
+}
+
+.pixel-card {
+  background-color: var(--nav-bg);
+  border: 2px solid var(--primary);
+  color: var(--white);
+  box-shadow: 6px 6px 0 var(--dark-bg); /* stronger pixel-style shadow */
+  image-rendering: pixelated;
+  font-family: 'MinecraftFont';
+  transition: transform 0.3s ease;
+}
+
+.pixel-card:hover {
+  transform: scale(1.01);
+}
+
+
+/* ----- Mobile Layout ----- */
+@media (max-width: 768px) {
+  .taskbar_container {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 0.75em;
+  }
+
+  .taskbar_container.collapsed h1 a {
+    font-size: 1.2rem;
+    top: 0.5em;
+    right: auto;
+    left: 1em;
+    transition: font-size 0.3s ease;
+  }
+
+  .taskbar_container.collapsed {
+    justify-content: flex-start;
+    padding: 0.5em 1em;
+  }
+
+  .taskbar_gif {
+    height: 100px;
+  }
+
+  .taskbar_toggle {
+    position: absolute;
+    right: -0.6rem;
+  }
+
+  .taskbar_menu {
+    width: 70%;
+    display: flex;
+  }
+
+  .close_btn {
+    display: flex;
+  }
+
+  .taskbar_menu a i {
+    margin-bottom: 0.3em;
+  }
+
+  .taskbar_container h1 a {
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    font-family: "PixelFont_inline";
+    position: absolute;
+    top: 4rem;
+    right: 4.5rem;
+  }
+
+  .tagline {
+    font-size: 1em;
+    top: -4.5em;
+    left: 5.5em;
+    max-width: 80%;
+    font-size: 0.75rem;
+  }
+
+  .introduction {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cozy-room {
+    margin-top: 1em;
+  }
+
+  .site-footer p{
+    font-size: 0.8em;
+  }
+
+}
+
+/* ----- Desktop Layout ----- */
+@media (min-width: 1200px) {
+
+  .taskbar_container.collapsed {
+    padding: 0.5em 1em;
+  }
+
+  .taskbar_container.collapsed h1 a {
+    font-size: 2rem;
+  }
+
+  .taskbar_container.collapsed .dancing-text {
+    transform: translateX(19.5rem) scale(1.3);
+    transition: transform 0.3s ease;
+  }
+
+  .taskbar_menu {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    gap: 1em;
+  }
+
+  .taskbar_toggle,
+  .close_btn {
+    display: none;
+  }
+}
