@@ -46,9 +46,10 @@ cd client
 npm install
 
 # Start the development server
-npm run dev 
-Make sure you have Node.js and npm installed. 
+npm run dev
 ```
+Make sure you have Node.js and npm installed. 
+
 
 ## 🧪 Tools You Can Use
 This site works great on:
