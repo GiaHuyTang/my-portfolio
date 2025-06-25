@@ -31,5 +31,72 @@ It features:
 ---
 
 ## 📁 Folder Structure (Simplified)
+my-portfolio/
+├── public/
+│ └── preview.png # optional screenshot
+├── src/
+│ ├── assets/ # fonts, cursors, icons
+│ ├── components/ # Taskbar_Gif, CozyRoom_Gif, etc.
+│ ├── pages/ # HomePage, Myself, etc.
+│ └── App.jsx
+├── index.css
+├── README.md
+└── package.json
+
+---
+
+## 🚀 Run Locally
+
+To run this portfolio on your local machine:
+
+```bash```
+# Clone the repository
+git clone https://github.com/GiaHuyTang/my-portfolio.git
+
+# Navigate into the project directory
+cd my-portfolio
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+
+## 🧪 Tools You Can Use
+This site works great on:
+
+Vite (for fast dev build)
+
+Vercel or Netlify for deployment
+
+GitHub Pages (requires static build configuration)
+
+## 🙋‍♂️ About Me
+Hi, I’m Gia Huy Tang, a software development student at Saskatchewan Polytechnic.
+I love building magical websites, taming bugs, and collecting rare UI pixels like treasure chests.
+
+Frontend, backend, or dragon — if it glitches, I fix it.
+
+## 📫 Contact
+Want to collaborate, chat, or just say hi?
+
+## 📧 Email: tanggiahuy1011@gmail.com
+## 🌐 Website: https://my-portfolio.com (update this link later)
+
+## 📜 License
+This project is open source under the MIT License.
+
+
+---
+
+Let me know if you want:
+- Vietnamese version 🇻🇳  
+- Link preview image  
+- Badges (npm, Vercel, etc.)  
+- Or a `.gitignore` and `package.json` ready to go
+
+I can also help make this a GitHub Pages site if needed!
+
 
 
