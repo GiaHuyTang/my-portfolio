@@ -61,7 +61,7 @@ Vercel or Netlify for deployment
 GitHub Pages (requires static build configuration)
 
 ## 🙋‍♂️ About Me
-Hi, I’m Gia Huy Tang, a software development student at Saskatchewan Polytechnic.
+Hi, I’m Gia Huy Tang, a software and website development student at Saskatchewan Polytechnic.
 I love building magical websites, taming bugs, and collecting rare UI pixels like treasure chests.
 
 Frontend, backend, or dragon — if it glitches, I fix it.
