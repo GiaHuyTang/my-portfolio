@@ -34,7 +34,7 @@ It features:
 
 To run this portfolio on your local machine:
 
-```bash```
+```bash
 # Clone the repository
 git clone https://github.com/GiaHuyTang/my-portfolio.git
 
@@ -46,8 +46,9 @@ cd client
 npm install
 
 # Start the development server
-npm run dev
-
+npm run dev 
+Make sure you have Node.js and npm installed. 
+```
 
 ## 🧪 Tools You Can Use
 This site works great on:
