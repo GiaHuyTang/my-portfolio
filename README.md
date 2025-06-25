@@ -30,21 +30,6 @@ It features:
 
 ---
 
-## 📁 Folder Structure (Simplified)
-my-portfolio/
-├── public/
-│ └── preview.png # optional screenshot
-├── src/
-│ ├── assets/ # fonts, cursors, icons
-│ ├── components/ # Taskbar_Gif, CozyRoom_Gif, etc.
-│ ├── pages/ # HomePage, Myself, etc.
-│ └── App.jsx
-├── index.css
-├── README.md
-└── package.json
-
----
-
 ## 🚀 Run Locally
 
 To run this portfolio on your local machine:
