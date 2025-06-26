@@ -595,6 +595,11 @@ body::before {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-top: 10rem;
+  }
+
+  .myself-section {
+    margin-top: 7rem;
   }
 
   .cozy-room {
