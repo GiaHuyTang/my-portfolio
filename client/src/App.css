@@ -606,10 +606,10 @@ body::before {
 
 }
 
-/* Narrow Phones: max-width 380px */
-@media screen and (max-width: 380px) {
+/* Narrow Phones: max-width 325px */
+@media screen and (max-width: 325px) {
   .taskbar_container h1 a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
 
