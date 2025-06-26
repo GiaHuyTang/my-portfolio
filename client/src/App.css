@@ -22,7 +22,7 @@ html,
 body {
   max-width: 100%;
   overflow-x: hidden;
-  
+
 }
 
 
@@ -530,8 +530,9 @@ body::before {
 /* Mobile: max-width 768px */
 @media (max-width: 768px) {
   .taskbar_container {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 86.5%;
     z-index: 999;
     flex-direction: row;
     justify-content: space-between;
