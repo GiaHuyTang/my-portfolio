@@ -8,8 +8,11 @@ function HomePage() {
       {/* Intro Section — Text on left, pixel cozy room on right */}
       <div className="introduction row">
         <div className="intro-text col-12 col-md-7">
-          <h1>Hi there</h1>
-          <h1>This is Huy Tang</h1>
+          <div className="typing-text">
+            <h1 className="typed-line">Hi there</h1>
+            <h1 className="typed-line-end">This is Huy Tang</h1>
+          </div>
+
           <p>And you’re visiting my closet</p>
           <p>— a space where I store my passion for programming, coding, and,</p>
           <p>&nbsp; occasionally, some random thoughts about myself.</p>
