@@ -4,7 +4,7 @@ import Avatar from "../assets/icons/Business-Cat.jpg";
 import portfolio from "../assets/documents/GiaHuyTang_portfolio.docx";
 import HTML_icon from "../assets/icons/HTML.png";
 import CSS_icon from "../assets/icons/CSS.png";
-import Javascript_icon from "../assets/icons/Javascript.png";
+import Javascript_icon from "../assets/icons/javascript.png";
 import Bootstrap_icon from "../assets/icons/Bootstrap.png";
 import ReactJS_icon from "../assets/icons/ReactJS.png";
 import Java_icon from "../assets/icons/Java.png";
