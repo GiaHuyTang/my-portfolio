@@ -81,12 +81,14 @@ function Myself() {
               <h2 className="mt-4">Programming Skill Board</h2>
             </div>
 
+            {/* === Buttons to reveal each level === */}
             <div className="skill-buttons text-center">
               <button onClick={() => setActivePopup("mastered")}><i class="hn hn-gaming"></i> Mastered</button>
               <button onClick={() => setActivePopup("leveling")}><i class="hn hn-startups"></i> Leveling Up</button>
               <button onClick={() => setActivePopup("newbie")}><i class="hn hn-seedlings-solid"></i> Newbie</button>
             </div>
 
+            {/* === Pop up when you click the button === */}
             {activePopup && (
               <div className="skill-popup-overlay" onClick={() => setActivePopup(null)}>
                 <div className="skill-popup-card" onClick={(e) => e.stopPropagation()}>
@@ -109,9 +111,15 @@ function Myself() {
                     )}
                   </h3>
                   <p>
-                    {activePopup === "mastered" && "Languages I’m confident in and have used in real-world projects"}
-                    {activePopup === "leveling" && "Languages I am actively learning, building with, or gaining hands-on experience with"}
-                    {activePopup === "newbie" && "Languages I have just learned the foundations and haven't built anything with them yet"}
+                    {activePopup === "mastered" && (
+                      <>Languages I’m confident in and have used in real&#8209;world projects</>
+                    )}
+                    {activePopup === "leveling" && (
+                      <>Languages I am actively learning, building with, or gaining hands-on experience with</>
+                    )}
+                    {activePopup === "newbie" && (
+                      <>Languages I have just learned the foundations and haven't built anything with them yet</>
+                    )}
                   </p>
 
                   <div className="icon-list">
@@ -153,6 +161,7 @@ function Myself() {
               </div>
             )}
 
+            {/* === Instruction to be more friendly with user === */}
             <div className="col-12 col-md-8 offset-md-4">
               <p><i class="hn hn-trophy-solid"></i> Choose the level to reveal the coding arsenal !</p>
             </div>
