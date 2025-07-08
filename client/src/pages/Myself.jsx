@@ -153,6 +153,9 @@ function Myself() {
               </div>
             )}
 
+            <div className="col-12 col-md-8 offset-md-4">
+              <p><i class="hn hn-trophy-solid"></i> Choose the level to reveal the coding arsenal !</p>
+            </div>
 
           </div>
 
