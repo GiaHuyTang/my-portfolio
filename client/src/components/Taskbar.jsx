@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../index.css';
 import Taskbar_Gif from './Taskbar_Gif.jsx';
 
-export default function Taskbar() {
+function Taskbar() {
   // Menu open/close toggle (mobile sidebar)
   const [isOpen, setIsOpen] = useState(false);
 
@@ -80,3 +80,5 @@ export default function Taskbar() {
     </>
   );
 }
+
+export default Taskbar;

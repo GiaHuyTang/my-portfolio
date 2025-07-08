@@ -50,16 +50,6 @@ npm run dev
 ```
 Make sure you have Node.js and npm installed. 
 
-
-## 🧪 Tools You Can Use
-This site works great on:
-
-Vite (for fast dev build)
-
-Vercel or Netlify for deployment
-
-GitHub Pages (requires static build configuration)
-
 ## 🙋‍♂️ About Me
 Hi, I’m Gia Huy Tang, a software and website development student at Saskatchewan Polytechnic.
 I love building magical websites, taming bugs, and collecting rare UI pixels like treasure chests.

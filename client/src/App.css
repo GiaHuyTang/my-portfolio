@@ -379,6 +379,20 @@ body::before {
   background-color: var(--secondary);
   color: var(--white);
 }
+.site-footer {
+  background-color: var(--nav-bg);
+  color: var(--white);
+  padding-bottom: 0.3em;
+  text-align: center;
+  font-family: 'MinecraftFont';
+  font-size: 1rem;
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 -4px 0 0 var(--dark-bg);
+
+  image-rendering: pixelated;
+}
+
+/* ==HomePage== */
 
 .introduction,
 .myself-section {
@@ -429,33 +443,8 @@ body::before {
   }
 }
 
-.site-footer {
-  background-color: var(--nav-bg);
-  color: var(--white);
-  padding-bottom: 0.3em;
-  text-align: center;
-  font-family: 'MinecraftFont';
-  font-size: 1rem;
-  border-top: 4px solid var(--primary);
-  box-shadow: 0 -4px 0 0 var(--dark-bg);
 
-  image-rendering: pixelated;
-}
 
-.pixel-card {
-  background-color: var(--nav-bg);
-  border: 2px solid var(--primary);
-  color: var(--white);
-  box-shadow: 6px 6px 0 var(--dark-bg);
-  /* stronger pixel-style shadow */
-  image-rendering: pixelated;
-  font-family: 'MinecraftFont';
-  transition: transform 0.3s ease;
-}
-
-.pixel-card:hover {
-  transform: scale(1.01);
-}
 
 .typing-text {
   display: inline-block;
@@ -523,6 +512,143 @@ body::before {
   to {
     border-right: none
   }
+}
+
+/* === Myself Page === */
+
+.download-btn {
+  background-color: #111122;
+  color: #00ffff;
+  font-family: 'MinecraftFont';
+  border: 3px solid #00ffff;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 0 4px #00ffff;
+  text-shadow: 1px 1px 0 #000;
+  transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: #00ffff;
+  color: #111122;
+  box-shadow: 0 0 8px #00ffff;
+}
+
+
+.pixel-card {
+  background-color: var(--nav-bg);
+  border: 2px solid var(--primary);
+  color: var(--white);
+  box-shadow: 6px 6px 0 var(--dark-bg);
+  /* stronger pixel-style shadow */
+  image-rendering: pixelated;
+  font-family: 'MinecraftFont';
+  transition: transform 0.3s ease;
+}
+
+.pixel-card:hover {
+  transform: scale(1.01);
+}
+
+/* === Pixel Skill Popup === */
+.skill-buttons button {
+  background-color: #111122;
+  border: 3px solid #00ffff;
+  color: #00ffff;
+  padding: 0.5rem 1.25rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  font-family: 'MinecraftFont', sans-serif;
+  font-size: 1rem;
+  border-radius: 0;
+  box-shadow: 0 0 4px #00ffff;
+  transition: background 0.2s ease;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.skill-buttons button:hover {
+  background-color: #00ffff;
+  color: #111122;
+  box-shadow: 0 0 8px #00ffff;
+}
+
+/* Overlay */
+.skill-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 30, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  image-rendering: pixelated;
+}
+
+/* Popup card */
+.skill-popup-card {
+  background: repeating-linear-gradient(
+    45deg,
+    #111122,
+    #111122 10px,
+    #14142f 10px,
+    #14142f 20px
+  );
+  border: 4px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff, inset 0 0 4px #00ffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  position: relative;
+  image-rendering: pixelated;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.8rem;
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 2rem;
+  cursor: pointer;
+  text-shadow: 1px 1px 0px #000;
+}
+
+/* Icon container */
+.icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Icon style */
+.pixel-logo, .pixel-logo-with-title {
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 2px #000);
+  transition: transform 0.2s ease;
+}
+.pixel-logo{
+  width: 48px;
+  height: 48px;
+}
+
+.pixel-logo-with-title{
+  width: 70px;
+  height: 70px;
+}
+
+.pixel-logo:hover {
+  transform: scale(1.1);
 }
 
 
