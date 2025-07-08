@@ -20,7 +20,7 @@ function Myself() {
   const [activePopup, setActivePopup] = useState(null);
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = portfolio; 
+    link.href = portfolio;
     link.download = "GiaHuyTang_Portfolio.docx";
     link.click();
   };
@@ -104,14 +104,22 @@ function Myself() {
 
                   <div className="icon-list">
                     {activePopup === "mastered" && (
-                      <>
+                      <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(64px, 1fr))',
+                        gap: '1rem',
+                        justifyItems: 'center',
+                        maxWidth: '300px',
+                        margin: '0 auto'
+                      }}> {/** You can delete all styles above (these styles on this div) 
+                           you have more icons and it will be arranged better */}
                         <img src={HTML_icon} alt="HTML icon" className="pixel-logo" />
                         <img src={CSS_icon} alt="CSS icon" className="pixel-logo" />
                         <img src={Javascript_icon} alt="Javscript icon" className="pixel-logo" />
                         <img src={Bootstrap_icon} alt="Bootstrap icon" className="pixel-logo-with-title" />
                         <img src={ReactJS_icon} alt="ReactJS icon" className="pixel-logo-with-title" />
                         <img src={Tailwind_icon} alt="Tailwind icon" className="pixel-logo-with-title" />
-                      </>
+                      </div>
                     )}
                     {activePopup === "leveling" && (
                       <>

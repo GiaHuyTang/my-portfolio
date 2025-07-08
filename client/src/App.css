@@ -647,7 +647,7 @@ body::before {
   height: 70px;
 }
 
-.pixel-logo:hover {
+.pixel-logo:hover, .pixel-logo-with-title:hover {
   transform: scale(1.1);
 }
 
