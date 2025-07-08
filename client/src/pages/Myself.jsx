@@ -112,10 +112,10 @@ function Myself() {
                   </h3>
                   <p>
                     {activePopup === "mastered" && (
-                      <>Languages I’m confident in and have used in real&#8209;world projects</>
+                      <>Languages I’m confident in and have used in <span style={{whiteSpace: 'nowrap'}}>real-world</span> projects</>
                     )}
                     {activePopup === "leveling" && (
-                      <>Languages I am actively learning, building with, or gaining hands-on experience with</>
+                      <>Languages I am actively learning, building with, or gaining <span style={{whiteSpace: 'nowrap'}}>hands-on</span> experience with</>
                     )}
                     {activePopup === "newbie" && (
                       <>Languages I have just learned the foundations and haven't built anything with them yet</>
