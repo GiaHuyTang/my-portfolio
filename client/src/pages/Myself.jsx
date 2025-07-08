@@ -5,16 +5,16 @@ import portfolio from "../assets/documents/GiaHuyTang_portfolio.docx";
 import HTML_icon from "../assets/icons/HTML.png";
 import CSS_icon from "../assets/icons/CSS.png";
 import Javascript_icon from "../assets/icons/javascript.png";
-import Bootstrap_icon from "../assets/icons/Bootstrap.png";
-import ReactJS_icon from "../assets/icons/ReactJS.png";
-import Java_icon from "../assets/icons/Java.png";
+import Bootstrap_icon from "../assets/icons/bootstrap.png";
+import ReactJS_icon from "../assets/icons/reactJS.png";
+import Java_icon from "../assets/icons/java.png";
 import ASPNET_icon from "../assets/icons/ASPNET.png";
 import SQL_icon from "../assets/icons/SQL.png";
 import MongoDB_icon from "../assets/icons/mongoDB.png";
 import Cplusplus_icon from "../assets/icons/C++.png";
 import Python_icon from "../assets/icons/python.png";
 import jQuery_icon from "../assets/icons/jQuery.png";
-import Tailwind_icon from "../assets/icons/Tailwind.png";
+import Tailwind_icon from "../assets/icons/tailwind.png";
 
 function Myself() {
   const [activePopup, setActivePopup] = useState(null);
