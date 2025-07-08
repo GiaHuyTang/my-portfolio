@@ -110,7 +110,6 @@ function Myself() {
                         <img src={Javascript_icon} alt="Javscript icon" className="pixel-logo" />
                         <img src={Bootstrap_icon} alt="Bootstrap icon" className="pixel-logo-with-title" />
                         <img src={ReactJS_icon} alt="ReactJS icon" className="pixel-logo-with-title" />
-                        <img src={ReactJS_icon} alt="ReactJS icon" className="pixel-logo-with-title" />
                         <img src={Tailwind_icon} alt="Tailwind icon" className="pixel-logo-with-title" />
                       </>
                     )}
