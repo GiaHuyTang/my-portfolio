@@ -92,9 +92,21 @@ function Myself() {
                 <div className="skill-popup-card" onClick={(e) => e.stopPropagation()}>
                   <button className="close-btn" onClick={() => setActivePopup(null)}>×</button>
                   <h3>
-                    {activePopup === "mastered" && "🎮 Mastered"}
-                    {activePopup === "leveling" && "🚧 Leveling Up"}
-                    {activePopup === "newbie" && "🕹️ Newbie"}
+                    {activePopup === "mastered" && (
+                      <>
+                        <i className="hn hn-gaming"></i> Mastered
+                      </>
+                    )}
+                    {activePopup === "leveling" && (
+                      <>
+                        <i className="hn hn-startups"></i> Leveling Up
+                      </>
+                    )}
+                    {activePopup === "newbie" && (
+                      <>
+                        <i className="hn hn-seedlings-solid"></i> Newbie
+                      </>
+                    )}
                   </h3>
                   <p>
                     {activePopup === "mastered" && "Languages I’m confident in and have used in real-world projects"}
