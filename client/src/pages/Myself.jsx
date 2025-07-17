@@ -1,20 +1,20 @@
 import React from "react";
 import { useState } from "react";
-import Avatar from "../assets/icons/business-cat.jpg";
+import Avatar from "../assets/icons/myselfPage/business-cat.jpg";
 import portfolio from "../assets/documents/GiaHuyTang_portfolio.docx";
-import HTML_icon from "../assets/icons/html.png";
-import CSS_icon from "../assets/icons/css.png";
-import Javascript_icon from "../assets/icons/javascript.png";
-import Bootstrap_icon from "../assets/icons/bootstrap.png";
-import ReactJS_icon from "../assets/icons/reactjs.png";
-import Java_icon from "../assets/icons/java.png";
-import ASPNET_icon from "../assets/icons/aspnet.png";
-import SQL_icon from "../assets/icons/sql.png";
-import MongoDB_icon from "../assets/icons/mongodb.png";
-import Cplusplus_icon from "../assets/icons/cplusplus.png";
-import Python_icon from "../assets/icons/python.png";
-import jQuery_icon from "../assets/icons/jquery.png";
-import Tailwind_icon from "../assets/icons/tailwind.png";
+import HTML_icon from "../assets/icons/myselfPage/html.png";
+import CSS_icon from "../assets/icons/myselfPage/css.png";
+import Javascript_icon from "../assets/icons/myselfPage/javascript.png";
+import Bootstrap_icon from "../assets/icons/myselfPage/bootstrap.png";
+import ReactJS_icon from "../assets/icons/myselfPage/reactjs.png";
+import Java_icon from "../assets/icons/myselfPage/java.png";
+import ASPNET_icon from "../assets/icons/myselfPage/aspnet.png";
+import SQL_icon from "../assets/icons/myselfPage/sql.png";
+import MongoDB_icon from "../assets/icons/myselfPage/mongodb.png";
+import Cplusplus_icon from "../assets/icons/myselfPage/cplusplus.png";
+import Python_icon from "../assets/icons/myselfPage/python.png";
+import jQuery_icon from "../assets/icons/myselfPage/jquery.png";
+import Tailwind_icon from "../assets/icons/myselfPage/tailwind.png";
 
 function Myself() {
   const [activePopup, setActivePopup] = useState(null);
@@ -163,7 +163,7 @@ function Myself() {
 
             {/* === Instruction to be more friendly with user === */}
             <div className="col-12 col-md-8 offset-md-4">
-              <p><i class="hn hn-trophy-solid"></i> Choose the level to reveal the coding arsenal !</p>
+              <p><i class="hn hn-trophy-solid"></i> Pick a level to unlock your coding arsenal !</p>
             </div>
 
           </div>

@@ -1,5 +1,5 @@
 import React from "react"
-import myGif from "../assets/icons/cozy_room.webp"
+import myGif from "../assets/icons/homePage/cozy_room.webp"
 
 function CozyRoom_Gif(){
 

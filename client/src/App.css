@@ -651,6 +651,161 @@ body::before {
   transform: scale(1.1);
 }
 
+.project-page {
+  text-align: center;
+  padding: 2em;
+}
+
+/* === Pixel Map Grid === */
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  
+}
+
+/* Map Tile */
+.map-tile {
+  background-color: #1a1a2e; /* deep muted indigo */
+  padding: 1rem;
+  border: 2px solid #00aabb; /* subtle pixel cyan */
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 2px #005577; /* soft inner edge */
+  transition: transform 0.2s ease;
+  color: #e0e0e0;
+  image-rendering: pixelated;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.map-tile:hover {
+  transform: scale(1.03);
+  border-color: #00ccdd;
+}
+
+/* === Map Tile with full image background === */
+.map-tile-bg {
+  position: relative;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #00aabb;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 2px #005577;
+  image-rendering: pixelated;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.map-tile-bg:hover {
+  transform: scale(1.03);
+  border-color: #00ccdd;
+}
+
+/* Overlay content inside background tile */
+.tile-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(10, 10, 30, 0.65); /* semi-transparent pixel overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #e0e0e0;
+  font-family: 'Press Start 2P', monospace;
+  image-rendering: pixelated;
+}
+
+/* Map Image */
+.map-image {
+  width: 100%;
+  border-radius: 0.25rem;
+  image-rendering: pixelated;
+  box-shadow: 0 0 4px #00ffff;
+}
+
+/* Play Button */
+.play-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background-color: #111122;
+  color: #00ffff;
+  border: 3px solid #00ffff;
+  font-family: 'MinecraftFont', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0;
+  box-shadow: 0 0 4px #00ffff;
+  text-shadow: 1px 1px 0px #000;
+  transition: background 0.2s ease;
+}
+
+.play-button:hover {
+  background-color: #00ffff;
+  color: #111122;
+  box-shadow: 0 0 8px #00ffff;
+}
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 30, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  image-rendering: pixelated;
+}
+.tech-stack-line {
+  padding: 0.75rem 1rem;
+  border: 2px solid #00ffff;
+  font-family: 'Press Start 2P', monospace;
+  color: #00ffff;
+  background-color: #111122;
+  text-shadow: 1px 1px 0 #000;
+  image-rendering: pixelated;
+}
+
+
+/* Popup Card */
+.popup-card {
+  background: repeating-linear-gradient(
+    45deg,
+    #111122,
+    #111122 10px,
+    #14142f 10px,
+    #14142f 20px
+  );
+  padding: 2rem;
+  border: 4px solid #00ffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px #00ffff, inset 0 0 4px #00ffff;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  image-rendering: pixelated;
+  text-shadow: 1px 1px 0px #000;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  text-shadow: 1px 1px 0px #000;
+}
 
 /* ----- Media Queries ----- */
 /* Mobile: max-width 768px */
@@ -725,6 +880,10 @@ body::before {
   }
 
   .myself-section {
+    margin-top: 7rem;
+  }
+
+  .project-page {
     margin-top: 7rem;
   }
 

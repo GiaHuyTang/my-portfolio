@@ -1,5 +1,5 @@
 import React from "react"
-import myGif from "../assets/icons/characters.gif"
+import myGif from "../assets/icons/homePage/characters.gif"
 
 function RunningCharacters_Gif(){
 
