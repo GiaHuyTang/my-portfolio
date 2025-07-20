@@ -379,6 +379,7 @@ body::before {
   background-color: var(--secondary);
   color: var(--white);
 }
+
 .site-footer {
   background-color: var(--nav-bg);
   color: var(--white);
@@ -590,13 +591,11 @@ body::before {
 
 /* Popup card */
 .skill-popup-card {
-  background: repeating-linear-gradient(
-    45deg,
-    #111122,
-    #111122 10px,
-    #14142f 10px,
-    #14142f 20px
-  );
+  background: repeating-linear-gradient(45deg,
+      #111122,
+      #111122 10px,
+      #14142f 10px,
+      #14142f 20px);
   border: 4px solid #00ffff;
   box-shadow: 0 0 10px #00ffff, inset 0 0 4px #00ffff;
   padding: 2rem;
@@ -632,26 +631,30 @@ body::before {
 }
 
 /* Icon style */
-.pixel-logo, .pixel-logo-with-title {
+.pixel-logo,
+.pixel-logo-with-title {
   image-rendering: pixelated;
   filter: drop-shadow(0 0 2px #000);
   transition: transform 0.2s ease;
 }
-.pixel-logo{
+
+.pixel-logo {
   width: 48px;
   height: 48px;
 }
 
-.pixel-logo-with-title{
+.pixel-logo-with-title {
   width: 70px;
   height: 70px;
 }
 
-.pixel-logo:hover, .pixel-logo-with-title:hover {
+.pixel-logo:hover,
+.pixel-logo-with-title:hover {
   transform: scale(1.1);
 }
 
-.project-page {
+.project-page,
+.contact-form {
   text-align: center;
   padding: 2em;
 }
@@ -661,16 +664,19 @@ body::before {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
-  
+
 }
 
 /* Map Tile */
 .map-tile {
-  background-color: #1a1a2e; /* deep muted indigo */
+  background-color: #1a1a2e;
+  /* deep muted indigo */
   padding: 1rem;
-  border: 2px solid #00aabb; /* subtle pixel cyan */
+  border: 2px solid #00aabb;
+  /* subtle pixel cyan */
   border-radius: 0.5rem;
-  box-shadow: inset 0 0 2px #005577; /* soft inner edge */
+  box-shadow: inset 0 0 2px #005577;
+  /* soft inner edge */
   transition: transform 0.2s ease;
   color: #e0e0e0;
   image-rendering: pixelated;
@@ -705,9 +711,12 @@ body::before {
 /* Overlay content inside background tile */
 .tile-overlay {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(10, 10, 30, 0.65); /* semi-transparent pixel overlay */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 30, 0.65);
+  /* semi-transparent pixel overlay */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -761,6 +770,7 @@ body::before {
   z-index: 9999;
   image-rendering: pixelated;
 }
+
 .tech-stack-line {
   padding: 0.75rem 1rem;
   border: 2px solid #00ffff;
@@ -774,13 +784,11 @@ body::before {
 
 /* Popup Card */
 .popup-card {
-  background: repeating-linear-gradient(
-    45deg,
-    #111122,
-    #111122 10px,
-    #14142f 10px,
-    #14142f 20px
-  );
+  background: repeating-linear-gradient(45deg,
+      #111122,
+      #111122 10px,
+      #14142f 10px,
+      #14142f 20px);
   padding: 2rem;
   border: 4px solid #00ffff;
   border-radius: 0.5rem;
@@ -805,6 +813,117 @@ body::before {
   font-size: 1.8rem;
   cursor: pointer;
   text-shadow: 1px 1px 0px #000;
+}
+
+/*== Loading Screen ==*/
+.hamster-gif {
+  width: 200px;
+  margin-top: 1rem;
+  image-rendering: pixelated;
+}
+
+.loading-screen {
+  height: 100vh;
+  background-color: #111122;
+  color: #00ffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  image-rendering: pixelated;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.dots {
+  display: inline-block;
+  width: 1.5em;
+}
+
+.dot {
+  visibility: hidden;
+}
+
+.dot.visible {
+  visibility: visible;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  background-color: var(--nav-bg);
+  border: 3px solid var(--primary);
+  box-shadow: 6px 6px 0 var(--dark-bg);
+  font-family: 'MinecraftFont';
+  color: var(--white);
+  image-rendering: pixelated;
+}
+
+.contact-form h1 {
+  font-size: 1.8rem;
+  text-shadow: 1px 1px var(--highlight);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--highlight); 
+  text-align: left;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+  font-family: 'MinecraftFont';
+  background-color: #111122;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 96.5%;
+  box-shadow: 0 0 4px #00ffff;
+  text-shadow: 1px 1px 0 #000;
+  resize: vertical;
+}
+
+
+.contact-form button {
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  background-color: #00ffff;
+  color: #111122;
+  border: 2px solid #00ffff;
+  font-family: 'MinecraftFont';
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00ffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-form button:hover {
+  background-color: #7474e8;
+  color: #000000;
+  border: 2px solid #b8b8ef;
+  box-shadow: 4px 4px 0 #16164d;
+  transform: translate(-2px, -2px);
+  animation: all;
 }
 
 /* ----- Media Queries ----- */
@@ -879,12 +998,37 @@ body::before {
     padding-top: 10rem;
   }
 
-  .myself-section {
+  .myself-section,
+  .project-page {
     margin-top: 7rem;
   }
 
-  .project-page {
-    margin-top: 7rem;
+  .contact-form {
+    padding: 1rem 1.2rem 1.2rem 1.2rem;
+    margin: 10rem 1rem 2rem 1rem;
+    width: auto;
+    max-width: 90vw;
+  }
+
+  .contact-form h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-form label {
+    font-size: 0.95rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+    width: 94%;
+  }
+
+  .contact-form button {
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
   }
 
   .cozy-room {
@@ -895,41 +1039,6 @@ body::before {
     font-size: 0.8em;
   }
 
-}
-
-/*== Loading Screen ==*/
-.hamster-gif {
-  width: 200px;
-  margin-top: 1rem;
-  image-rendering: pixelated;
-}
-
-.loading-screen {
-  height: 100vh;
-  background-color: #111122;
-  color: #00ffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  image-rendering: pixelated;
-  animation: flicker 1.5s infinite;
-}
-
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50%      { opacity: 0.4; }
-}
-.dots {
-  display: inline-block;
-  width: 1.5em; 
-}
-.dot {
-  visibility: hidden;
-}
-.dot.visible {
-  visibility: visible;
 }
 
 /* Narrow Phones: max-width 325px */

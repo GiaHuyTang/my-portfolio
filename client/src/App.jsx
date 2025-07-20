@@ -15,19 +15,19 @@ import LoadingScreen from "./components/LoadingScreen.jsx";
 
 export default function App() {
   const [isFirstVisit, setIsFirstVisit] = useState(() => {
-    return localStorage.getItem("hasSeenLoading") !== "true";
+    return !sessionStorage.getItem("hasSeenLoading");
   });
 
   useEffect(() => {
-  if (isFirstVisit) {
-    const timer = setTimeout(() => {
-      setIsFirstVisit(false);
-      localStorage.setItem("hasSeenLoading", "true");
-    }, 3000);
+    if (isFirstVisit) {
+      const timer = setTimeout(() => {
+        setIsFirstVisit(false);
+        sessionStorage.setItem("hasSeenLoading", "true");
+      }, 3000);
 
-    return () => clearTimeout(timer);
-  }
-}, [isFirstVisit]);
+      return () => clearTimeout(timer);
+    }
+  }, [isFirstVisit]);
 
   return isFirstVisit ? (
     <LoadingScreen />
