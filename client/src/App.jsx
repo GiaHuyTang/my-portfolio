@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap-grid.min.css'; /* Just Grid */
 import 'bootstrap/dist/css/bootstrap-utilities.min.css';
 import '@hackernoon/pixel-icon-library/fonts/iconfont.css';
@@ -10,13 +11,26 @@ import Myself from "./pages/Myself.jsx";
 import Projects from "./pages/Projects.jsx";
 import Contact from "./pages/Contact.jsx";
 import Footer from "./components/Footer.jsx";
+import LoadingScreen from "./components/LoadingScreen.jsx";
 
 export default function App() {
-  return (
-    <div className="page-wrapper ">
+  const [isFirstVisit, setIsFirstVisit] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsFirstVisit(false);
+    }, 3000); // Show loading screen for 3s
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  return isFirstVisit ? (
+    <LoadingScreen />
+  ) : (
+    <div className="page-wrapper">
       <Router>
         <Taskbar />
-
         <main className="content">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -25,10 +39,10 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
-        
         <Footer />
       </Router>
     </div>
   );
+
 }
 

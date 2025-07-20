@@ -897,6 +897,41 @@ body::before {
 
 }
 
+/*== Loading Screen ==*/
+.hamster-gif {
+  width: 200px;
+  margin-top: 1rem;
+  image-rendering: pixelated;
+}
+
+.loading-screen {
+  height: 100vh;
+  background-color: #111122;
+  color: #00ffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  image-rendering: pixelated;
+  animation: flicker 1.5s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+.dots {
+  display: inline-block;
+  width: 1.5em; 
+}
+.dot {
+  visibility: hidden;
+}
+.dot.visible {
+  visibility: visible;
+}
+
 /* Narrow Phones: max-width 325px */
 @media screen and (max-width: 325px) {
   .taskbar_container h1 a {
