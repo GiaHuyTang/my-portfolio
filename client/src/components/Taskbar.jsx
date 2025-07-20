@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../index.css';
 import Taskbar_Gif from './Taskbar_Gif.jsx';
+import { Link } from 'react-router-dom';
 
 function Taskbar() {
   // Menu open/close toggle (mobile sidebar)

@@ -14,16 +14,20 @@ import Footer from "./components/Footer.jsx";
 import LoadingScreen from "./components/LoadingScreen.jsx";
 
 export default function App() {
-  const [isFirstVisit, setIsFirstVisit] = useState(true);
+  const [isFirstVisit, setIsFirstVisit] = useState(() => {
+    return localStorage.getItem("hasSeenLoading") !== "true";
+  });
 
   useEffect(() => {
+  if (isFirstVisit) {
     const timer = setTimeout(() => {
       setIsFirstVisit(false);
-    }, 3000); // Show loading screen for 3s
+      localStorage.setItem("hasSeenLoading", "true");
+    }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
-
+  }
+}, [isFirstVisit]);
 
   return isFirstVisit ? (
     <LoadingScreen />
