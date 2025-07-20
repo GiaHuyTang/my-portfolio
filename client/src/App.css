@@ -860,6 +860,7 @@ body::before {
   visibility: visible;
 }
 
+/* == Contact Page ==*/
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -925,6 +926,84 @@ body::before {
   transform: translate(-2px, -2px);
   animation: all;
 }
+
+.pixel-error-popup {
+  background-color: #ff0033;
+  border: 3px solid #ffffff;
+  font-family: 'MinecraftFont', monospace;
+  color: #ffffff;
+  text-align: center;
+  width: fit-content;
+  max-width: 90%;
+  box-shadow: 0 0 12px #ff0033;
+  image-rendering: pixelated;
+
+  /* collapsed state */
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  max-height: 0;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    max-height 0.4s ease,
+    padding 0.4s ease,
+    margin 0.4s ease;
+}
+
+@keyframes pixel-blip-out {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: none;
+  }
+  30% {
+    opacity: 0.7;
+    transform: scale(1.1) translateY(-2px);
+    filter: contrast(130%) brightness(150%);
+  }
+  60% {
+    opacity: 0.4;
+    transform: scale(0.6) translateY(10px);
+    filter: contrast(200%) brightness(300%) grayscale(80%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translateY(30px);
+    filter: blur(2px);
+  }
+}
+
+.pixel-error-popup.hidden {
+  animation: pixel-blip-out 0.4s ease forwards;
+  max-height: 0;
+  padding: 0;
+  margin: 0 auto;
+  pointer-events: none;
+}
+.pixel-error-popup.visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  max-height: 200px; 
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.pixel-error-popup.email-error {
+  background-color: #ff6600; 
+  box-shadow: 0 0 12px #ff6600;
+}
+
+.contact-form.form-error {
+  border-color: #ff0033;
+  box-shadow: 0 0 8px #ff0033;
+}
+
 
 /* ----- Media Queries ----- */
 /* Mobile: max-width 768px */

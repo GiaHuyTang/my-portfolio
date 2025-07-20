@@ -1,63 +1,103 @@
 import React, { useState } from "react";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+    const [emailError, setEmailError] = useState(false);
+    const [formError, setFormError] = useState(false);
+    const validEmailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Message transmitted:", formData);
-    // You can wire this to an API later or use Formspree/Netlify
-  };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
 
-  return (
-    <form className="contact-form" onSubmit={handleSubmit}>
-      <h1><i class="hn hn-startups"></i> Signal Transmission Console</h1>
-      <p>Initiating handshake... awaiting your message.</p>
+        if (name === "email") {
+            const isValidEmail = validEmailFormat.test(value);
+            if (isValidEmail) {
+                setEmailError(false);
+            }
+        }
 
-      <label>
-        Name:
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-      </label>
+        setFormError(false); // Clears general error
+    };
 
-      <label>
-        Email:
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-      </label>
 
-      <label>
-        Message:
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
-      </label>
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { name, email, message } = formData;
 
-      <button type="submit">📡 Transmit Signal</button>
-    </form>
-  );
+        const isValidEmail = validEmailFormat.test(email);
+
+        if (!name || !email || !message) {
+            setFormError(true);
+            setEmailError(false); // only general error
+            return;
+        }
+
+        if (!isValidEmail) {
+            setEmailError(true);
+            setFormError(false);
+            return;
+        }
+
+        // All good — reset errors
+        setFormError(false);
+        setEmailError(false);
+        console.log("📡 Message transmitted:", formData);
+        // call API
+    };
+
+
+    return (
+        <div className="contact-wrapper">
+            <div className={`pixel-error-popup ${formError ? "visible" : "hidden"}`}>
+                <i className="hn hn-alert-triangle"></i> TRANSMISSION FAILED: Incomplete fields detected.
+            </div>
+
+            <div className={`pixel-error-popup email-error ${emailError ? "visible" : "hidden"}`}>
+                <i className="hn hn-mail"></i> TRANSMISSION FAILED: Invalid email format detected.
+            </div>
+
+            <form className={`contact-form ${formError ? "form-error" : ""}`} onSubmit={handleSubmit}>
+                <h1>
+                    <i className="hn hn-startups"></i> Signal Transmission Console
+                </h1>
+                <p>Initiating handshake... awaiting your message.</p>
+
+                <label>Name:</label>
+                <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+
+                />
+
+                <label>Email:</label>
+                <input
+                    type="text"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+
+                />
+
+                <label>Message:</label>
+                <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+
+                />
+
+                <button type="submit"><i class="hn hn-upload-alt"></i> Transmit Signal</button>
+            </form>
+        </div>
+    );
 }
 
 export default Contact;

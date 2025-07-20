@@ -48,7 +48,7 @@ function Myself() {
               {/* Download Button (Below Avatar) */}
               <div className="mt-3">
                 <button className="download-btn" onClick={handleDownload}>
-                  <i class="hn hn-copy-solid"></i> Download Portfolio
+                  <i class="hn hn-paperclip"></i> Download Portfolio
                 </button>
               </div>
             </div>
