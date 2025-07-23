@@ -979,6 +979,28 @@ body::before {
   box-shadow: 0 0 8px #ff0033;
 }
 
+.alert-log {
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #00ff88;
+  font-family: 'MinecraftFont', monospace;
+  padding: 0.5rem 1rem;
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 6px #00ff88;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 999;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
 
 /* ----- Media Queries ----- */
 /* Mobile: max-width 768px */

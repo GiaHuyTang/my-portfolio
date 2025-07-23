@@ -10,6 +10,8 @@ function Contact() {
     const [emailError, setEmailError] = useState(false);
     const [formError, setFormError] = useState(false);
     const validEmailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+    const [alertAcknowledged, setAlertAcknowledged] = useState(false);
+
     const popupRef = useRef();
 
     useEffect(() => {
@@ -17,7 +19,10 @@ function Contact() {
             if (popupRef.current && !popupRef.current.contains(e.target)) {
                 setFormError(false);
                 setEmailError(false);
+                setAlertAcknowledged(true);
+                setTimeout(() => setAlertAcknowledged(false), 2000); // display for 2s
             }
+
         };
 
         if (formError || emailError) {
@@ -87,6 +92,11 @@ function Contact() {
                 <i className="hn hn-mail"></i> TRANSMISSION FAILED: Invalid email format detected.
             </div>
 
+            {alertAcknowledged && (
+                <div className="alert-log">
+                    <span>&gt;&gt; ALERT ACKNOWLEDGED</span>
+                </div>
+            )}
 
             <form className={`contact-form ${formError ? "form-error" : ""}`} onSubmit={handleSubmit}>
                 <h1>
