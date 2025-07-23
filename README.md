@@ -60,7 +60,7 @@ Frontend, backend, or dragon — if it glitches, I fix it.
 Want to collaborate, chat, or just say hi?
 
 📧 Email: tanggiahuy1011@gmail.com  
-🌐 Website: https://my-portfolio.com (update this link later)
+🌐 Website: https://giahuy-tang.vercel.app
 
 ## 📜 License
 This project is open source under the MIT License.
