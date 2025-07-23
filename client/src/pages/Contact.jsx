@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -10,6 +10,25 @@ function Contact() {
     const [emailError, setEmailError] = useState(false);
     const [formError, setFormError] = useState(false);
     const validEmailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+    const popupRef = useRef();
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (popupRef.current && !popupRef.current.contains(e.target)) {
+                setFormError(false);
+                setEmailError(false);
+            }
+        };
+
+        if (formError || emailError) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [formError, emailError]);
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -54,13 +73,20 @@ function Contact() {
 
     return (
         <div className="contact-wrapper">
-            <div className={`pixel-error-popup ${formError ? "visible" : "hidden"}`}>
+            <div
+                ref={popupRef}
+                className={`pixel-error-popup ${formError ? "visible" : ""}`}
+            >
                 <i className="hn hn-alert-triangle"></i> TRANSMISSION FAILED: Incomplete fields detected.
             </div>
 
-            <div className={`pixel-error-popup email-error ${emailError ? "visible" : "hidden"}`}>
+            <div
+                ref={popupRef}
+                className={`pixel-error-popup email-error ${emailError ? "visible" : ""}`}
+            >
                 <i className="hn hn-mail"></i> TRANSMISSION FAILED: Invalid email format detected.
             </div>
+
 
             <form className={`contact-form ${formError ? "form-error" : ""}`} onSubmit={handleSubmit}>
                 <h1>

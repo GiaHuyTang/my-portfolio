@@ -861,6 +861,10 @@ body::before {
 }
 
 /* == Contact Page ==*/
+.contact-wrapper {
+  position: relative;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -885,7 +889,7 @@ body::before {
   display: block;
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
-  color: var(--highlight); 
+  color: var(--highlight);
   text-align: left;
 }
 
@@ -928,6 +932,7 @@ body::before {
 }
 
 .pixel-error-popup {
+  position: absolute;
   background-color: #ff0033;
   border: 3px solid #ffffff;
   font-family: 'MinecraftFont', monospace;
@@ -955,18 +960,17 @@ body::before {
     margin 0.4s ease;
 }
 
-
 .pixel-error-popup.visible {
   opacity: 1;
   transform: scale(1);
   pointer-events: auto;
-  max-height: 200px; 
+  max-height: 200px;
   padding: 1rem;
   margin-top: 1.5rem;
 }
 
 .pixel-error-popup.email-error {
-  background-color: #ff6600; 
+  background-color: #ff6600;
   box-shadow: 0 0 12px #ff6600;
 }
 
@@ -1079,6 +1083,10 @@ body::before {
   .contact-form button {
     font-size: 1rem;
     padding: 0.6rem 1rem;
+  }
+  
+  .pixel-error-popup{
+    font-size: 0.8rem;
   }
 
   .cozy-room {
