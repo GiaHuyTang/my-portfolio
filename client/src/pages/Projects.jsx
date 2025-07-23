@@ -43,7 +43,7 @@ function Projects() {
 
     return (
         <div className="project-page">
-            <h1 className="title"><i class="hn hn-gaming"></i> Choose Your Map</h1>
+            <h1 className="title"><i className="hn hn-gaming"></i> Choose Your Map</h1>
             <div className="map-grid">
                 {projects.map((project) => (
                     <div
@@ -53,7 +53,7 @@ function Projects() {
                         <div className="tile-overlay">
                             <h3>{project.name}</h3>
                             <button className="play-button" onClick={() => openPopup(project.id)}>
-                                <i class="hn hn-play"></i> Play
+                                <i className="hn hn-play"></i> Play
                             </button>
                         </div>
                     </div>

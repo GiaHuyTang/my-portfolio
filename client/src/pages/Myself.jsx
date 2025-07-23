@@ -48,7 +48,7 @@ function Myself() {
               {/* Download Button (Below Avatar) */}
               <div className="mt-3">
                 <button className="download-btn" onClick={handleDownload}>
-                  <i class="hn hn-paperclip"></i> Download Portfolio
+                  <i className="hn hn-paperclip"></i> Download Portfolio
                 </button>
               </div>
             </div>
@@ -83,9 +83,9 @@ function Myself() {
 
             {/* === Buttons to reveal each level === */}
             <div className="skill-buttons text-center">
-              <button onClick={() => setActivePopup("mastered")}><i class="hn hn-gaming"></i> Mastered</button>
-              <button onClick={() => setActivePopup("leveling")}><i class="hn hn-startups"></i> Leveling Up</button>
-              <button onClick={() => setActivePopup("newbie")}><i class="hn hn-seedlings-solid"></i> Newbie</button>
+              <button onClick={() => setActivePopup("mastered")}><i className="hn hn-gaming"></i> Mastered</button>
+              <button onClick={() => setActivePopup("leveling")}><i className="hn hn-startups"></i> Leveling Up</button>
+              <button onClick={() => setActivePopup("newbie")}><i className="hn hn-seedlings-solid"></i> Newbie</button>
             </div>
 
             {/* === Pop up when you click the button === */}
@@ -163,7 +163,7 @@ function Myself() {
 
             {/* === Instruction to be more friendly with user === */}
             <div className="col-12 col-md-8 offset-md-4">
-              <p><i class="hn hn-trophy-solid"></i> Pick a level to unlock your coding arsenal !</p>
+              <p><i className="hn hn-trophy-solid"></i> Pick a level to unlock your coding arsenal !</p>
             </div>
 
           </div>

@@ -5,7 +5,7 @@ function Footer() {
     return(
     <>
         <footer className="site-footer">
-            <p>© 2025 Gia Huy Tang. All pixels reserved. <i class="hn hn-gaming"></i> <i class="hn hn-robot-solid"></i> <i class="hn hn-technology"></i></p>
+            <p>© 2025 Gia Huy Tang. All pixels reserved. <i className="hn hn-gaming"></i> <i className="hn hn-robot-solid"></i> <i className="hn hn-technology"></i></p>
         </footer>
     </>
     )

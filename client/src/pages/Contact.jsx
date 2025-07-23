@@ -120,7 +120,7 @@ function Contact() {
 
                 />
 
-                <button type="submit"><i class="hn hn-upload-alt"></i> Transmit Signal</button>
+                <button type="submit"><i className="hn hn-upload-alt"></i> Transmit Signal</button>
             </form>
         </div>
     );
