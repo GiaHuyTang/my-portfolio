@@ -72,7 +72,28 @@ function Contact() {
         setFormError(false);
         setEmailError(false);
         console.log("📡 Message transmitted:", formData);
+        
         // call API
+        fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.success) {
+                    console.log("Message sent!");
+                    // Optionally show a success popup and reset the form
+                    setFormData({ name: "", email: "", message: "" });
+                } else {
+                    console.error("Message failed:", data.error);
+                    // Optionally display failure message
+                }
+            })
+            .catch((err) => {
+                console.error("Fetch error:", err);
+            });
+
     };
 
 
