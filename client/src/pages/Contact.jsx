@@ -72,22 +72,20 @@ function Contact() {
         setFormError(false);
         setEmailError(false);
         console.log("📡 Message transmitted:", formData);
-        
+
         // call API
-        fetch("/api/contact", {
+        fetch("https://formspree.io/f/xeozeabq", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
         })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.success) {
-                    console.log("Message sent!");
-                    // Optionally show a success popup and reset the form
+            .then((res) => {
+                if (res.ok) {
+                    console.log("Formspree says: Message sent!");
                     setFormData({ name: "", email: "", message: "" });
+                    // You can also trigger a success message here
                 } else {
-                    console.error("Message failed:", data.error);
-                    // Optionally display failure message
+                    console.error("Formspree error: Something went wrong.");
                 }
             })
             .catch((err) => {
