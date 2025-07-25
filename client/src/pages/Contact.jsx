@@ -72,9 +72,15 @@ function Contact() {
         setFormError(false);
         setEmailError(false);
         console.log("📡 Message transmitted:", formData);
+        console.log("Endpoint:", import.meta.env.VITE_FORMSPREE_URL)
+
+
+        if (!import.meta.env.VITE_FORMSPREE_URL) {
+  console.warn("Formspree URL is missing! Check env settings.");
+}
 
         // call API
-        fetch("https://formspree.io/f/xeozeabq", {
+        fetch(import.meta.env.VITE_FORMSPREE_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
