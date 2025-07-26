@@ -1001,6 +1001,44 @@ body::before {
   100% { opacity: 0; }
 }
 
+.pixel-success-popup {
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #00ff88;
+  font-family: 'MinecraftFont', monospace;
+  padding: 0.5rem 1rem;
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 6px #00ff88;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 999;
+  animation: fadeOut 2s forwards;
+  display: none;
+}
+
+.pixel-success-popup.visible {
+  display: block;
+}
+
+.social-title{
+  margin-top: 6rem;
+}
+.social-icons a {
+  margin: 0 10px;
+  color: #555;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #007bff; 
+}
+
+
 /* ----- Media Queries ----- */
 /* Mobile: max-width 768px */
 @media (max-width: 768px) {
@@ -1082,7 +1120,7 @@ body::before {
     padding: 1rem 1.2rem 1.2rem 1.2rem;
     margin: 10rem 1rem 2rem 1rem;
     width: auto;
-    max-width: 90vw;
+    max-width: 75%;
   }
 
   .contact-form h1 {

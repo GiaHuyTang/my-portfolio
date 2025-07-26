@@ -11,6 +11,7 @@ function Contact() {
     const [formError, setFormError] = useState(false);
     const validEmailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
     const [alertAcknowledged, setAlertAcknowledged] = useState(false);
+    const [formSuccess, setFormSuccess] = useState(false);
 
     const popupRef = useRef();
 
@@ -71,13 +72,14 @@ function Contact() {
         // All good — reset errors
         setFormError(false);
         setEmailError(false);
+        setFormSuccess(true);
         console.log("📡 Message transmitted:", formData);
         console.log("Endpoint:", import.meta.env.VITE_FORMSPREE_URL)
 
 
         if (!import.meta.env.VITE_FORMSPREE_URL) {
-  console.warn("Formspree URL is missing! Check env settings.");
-}
+            console.warn("Formspree URL is missing! Check env settings.");
+        }
 
         // call API
         fetch(import.meta.env.VITE_FORMSPREE_URL, {
@@ -102,62 +104,101 @@ function Contact() {
 
 
     return (
-        <div className="contact-wrapper">
-            <div
-                ref={popupRef}
-                className={`pixel-error-popup ${formError ? "visible" : ""}`}
-            >
-                <i className="hn hn-alert-triangle"></i> TRANSMISSION FAILED: Incomplete fields detected.
-            </div>
+        <div className="container">
+            <div className="row">
+                <div className="col-md-8">
+                    <div className="contact-wrapper">
+                        <div
+                            ref={popupRef}
+                            className={`pixel-error-popup ${formError ? "visible" : ""}`}
+                        >
+                            <i className="hn hn-alert-triangle"></i> TRANSMISSION FAILED: Incomplete fields detected.
+                        </div>
 
-            <div
-                ref={popupRef}
-                className={`pixel-error-popup email-error ${emailError ? "visible" : ""}`}
-            >
-                <i className="hn hn-mail"></i> TRANSMISSION FAILED: Invalid email format detected.
-            </div>
+                        <div
+                            ref={popupRef}
+                            className={`pixel-error-popup email-error ${emailError ? "visible" : ""}`}
+                        >
+                            <i className="hn hn-mail"></i> TRANSMISSION FAILED: Invalid email format detected.
+                        </div>
 
-            {alertAcknowledged && (
-                <div className="alert-log">
-                    <span>&gt;&gt; ALERT ACKNOWLEDGED</span>
+                        <div
+                            ref={popupRef}
+                            className={`pixel-success-popup ${formSuccess ? "visible" : ""}`}
+                        >
+                            <i className="hn hn-check-circle"></i> SIGNAL RECEIVED: Transmission successful.
+                        </div>
+
+
+                        {alertAcknowledged && (
+                            <div className="alert-log">
+                                <span>&gt;&gt; ALERT ACKNOWLEDGED</span>
+                            </div>
+                        )}
+
+                        <form className={`contact-form ${formError ? "form-error" : ""}`} onSubmit={handleSubmit}>
+                            <h1>
+                                <i className="hn hn-startups"></i> Signal Transmission Console
+                            </h1>
+                            <p>Initiating handshake... awaiting your message.</p>
+
+                            <label>Name:</label>
+                            <input
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+
+                            />
+
+                            <label>Email:</label>
+                            <input
+                                type="text"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+
+                            />
+
+                            <label>Message:</label>
+                            <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+
+                            />
+
+                            <button type="submit"><i className="hn hn-upload-alt"></i> Transmit Signal</button>
+                        </form>
+                    </div>
                 </div>
-            )}
+                <div className="col-md-4 d-flex flex-column align-items-center">
+                    <h1 className="social-title">Signal Ports</h1>
 
-            <form className={`contact-form ${formError ? "form-error" : ""}`} onSubmit={handleSubmit}>
-                <h1>
-                    <i className="hn hn-startups"></i> Signal Transmission Console
-                </h1>
-                <p>Initiating handshake... awaiting your message.</p>
+                    <h3>Email: tanggiahuy1011@gmail.com</h3>
+                    <h3>Phone Number: +1 (306) 630-6661</h3>
+                    <div className="social-icons">
+                        <h1>
+                            <a href="https://www.facebook.com/Stup1dD0g" target="_blank" rel="noopener noreferrer">
+                                <i className="hn hn-facebook-square"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/gia-huy-tang-6bb4181a3/" target="_blank" rel="noopener noreferrer">
+                                <i className="hn hn-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/GiaHuyTang" target="_blank" rel="noopener noreferrer">
+                                <i className="hn hn-github"></i>
+                            </a>
+                            <a href="mailto:tanggiahuy1011@gmail.com">
+                                <i className="hn hn-envelope"></i>
+                            </a>
+                        </h1>
+                    </div>
 
-                <label>Name:</label>
-                <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-
-                />
-
-                <label>Email:</label>
-                <input
-                    type="text"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-
-                />
-
-                <label>Message:</label>
-                <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-
-                />
-
-                <button type="submit"><i className="hn hn-upload-alt"></i> Transmit Signal</button>
-            </form>
+                </div>
+            </div>
         </div>
+
+
     );
 }
 
