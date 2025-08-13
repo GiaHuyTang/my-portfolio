@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Portfolio_Img from "../assets/icons/projectsPage/portfolioSite.png";
 import F1Tracker_Img from "../assets/icons/projectsPage/f1Tracker.png";
+import TheMovieDB_Img from "../assets/icons/projectsPage/theMoviedb.png";
 
 const projects = [
     {
@@ -22,11 +23,11 @@ const projects = [
     },
     {
         id: "proj3",
-        name: "Task Tracker",
+        name: "The Movie Database",
         description:
-            "A full-stack app to manage tasks with MongoDB backend and Node.js API.",
-        tech: ["MongoDB", "Express", "React", "Node.js"],
-        image: "/images/task-map.png",
+            "A website using themoviedb API to show popular, NowPlaying or Upcoming movies.",
+        tech: ["ASP.NET", "SQL", "C#"],
+        image: TheMovieDB_Img,
     },
 ];
 

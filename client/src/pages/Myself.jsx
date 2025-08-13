@@ -147,12 +147,13 @@ function Myself() {
                         <img src={ASPNET_icon} alt="ASP.NET icon" className="pixel-logo" />
                         <img src={SQL_icon} alt="SQL icon" className="pixel-logo" />
                         <img src={MongoDB_icon} alt="MongoDB icon" className="pixel-logo" />
+                        <img src={Python_icon} alt="Python icon" className="pixel-logo" />
                       </>
                     )}
                     {activePopup === "newbie" && (
                       <>
                         <img src={Cplusplus_icon} alt="C++ icon" className="pixel-logo" />
-                        <img src={Python_icon} alt="Python icon" className="pixel-logo" />
+                        
                         <img src={jQuery_icon} alt="jQuery icon" className="pixel-logo" />
                       </>
                     )}
