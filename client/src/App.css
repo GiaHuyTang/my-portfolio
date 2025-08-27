@@ -22,7 +22,7 @@ html,
 body {
   max-width: 100%;
   overflow-x: hidden;
-
+  padding-top: rem;
 }
 
 
@@ -40,7 +40,6 @@ body {
   flex: 1;
   overflow: visible;
   position: relative;
-  z-index: 1;
 }
 
 a,
@@ -93,8 +92,9 @@ body::before {
 }
 
 .taskbar_container {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 99%;
   background-color: var(--nav-bg);
   border: 4px solid var(--primary);
   box-shadow: 0 0 0 4px var(--dark-bg);
@@ -102,6 +102,7 @@ body::before {
   padding: 1em 2em;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
   justify-content: space-between;
   flex-wrap: wrap;
   z-index: 2000;
@@ -602,7 +603,7 @@ body::before {
   border-radius: 0.5rem;
   color: #ffffff;
   text-align: center;
-  max-width: 420px;
+  max-width: 400px;
   width: 90%;
   position: relative;
   image-rendering: pixelated;
@@ -625,9 +626,14 @@ body::before {
 .icon-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
+  align-items: center;
   margin-top: 1rem;
+  padding: 0 1rem;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Icon style */
@@ -646,6 +652,7 @@ body::before {
 .pixel-logo-with-title {
   width: 70px;
   height: 70px;
+  transform: translateY(0.65rem);
 }
 
 .pixel-logo:hover,
@@ -942,6 +949,7 @@ body::before {
   max-width: 90%;
   box-shadow: 0 0 12px #ff0033;
   image-rendering: pixelated;
+  z-index: 9999;
 
   /* collapsed state */
   opacity: 0;
@@ -991,7 +999,7 @@ body::before {
   box-shadow: 0 0 6px #00ff88;
   text-align: center;
   white-space: nowrap;
-  z-index: 999;
+  z-index: 9999;
   animation: fadeOut 2s forwards;
 }
 
@@ -1014,7 +1022,7 @@ body::before {
   box-shadow: 0 0 6px #00ff88;
   text-align: center;
   white-space: nowrap;
-  z-index: 999;
+  z-index: 9999;
   animation: fadeOut 2s forwards;
   display: none;
 }
@@ -1045,7 +1053,7 @@ body::before {
   .taskbar_container {
     position: fixed;
     top: 0;
-    width: 86.5%;
+    width: 95%;
     z-index: 999;
     flex-direction: row;
     justify-content: space-between;
@@ -1168,6 +1176,10 @@ body::before {
 
 /* Desktop: min-width 1200px */
 @media (min-width: 1200px) {
+
+  .content {
+    padding-top: 12rem;
+  }
 
   .taskbar_container.collapsed {
     padding: 0.5em 1em;

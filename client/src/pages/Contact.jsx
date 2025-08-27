@@ -12,28 +12,35 @@ function Contact() {
     const validEmailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
     const [alertAcknowledged, setAlertAcknowledged] = useState(false);
     const [formSuccess, setFormSuccess] = useState(false);
+    const [endpointError, setEndpointError] = useState(false);
 
     const popupRef = useRef();
 
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (popupRef.current && !popupRef.current.contains(e.target)) {
+                const hadError = formError || emailError || endpointError;
+
                 setFormError(false);
                 setEmailError(false);
-                setAlertAcknowledged(true);
-                setTimeout(() => setAlertAcknowledged(false), 2000); // display for 2s
-            }
+                setEndpointError(false);
+                setFormSuccess(false);
 
+                if (hadError) {
+                    setAlertAcknowledged(true);
+                    setTimeout(() => setAlertAcknowledged(false), 2000);
+                }
+            }
         };
 
-        if (formError || emailError) {
+        if (formError || emailError || endpointError) {
             document.addEventListener("mousedown", handleClickOutside);
         }
 
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [formError, emailError]);
+    }, [formError, emailError, endpointError, formSuccess]);
 
 
     const handleChange = (e) => {
@@ -79,6 +86,9 @@ function Contact() {
 
         if (!import.meta.env.VITE_FORMSPREE_URL) {
             console.warn("Formspree URL is missing! Check env settings.");
+            setEndpointError(true);
+            setFormSuccess(false);
+            return;
         }
 
         // call API
@@ -98,6 +108,8 @@ function Contact() {
             })
             .catch((err) => {
                 console.error("Fetch error:", err);
+                setEndpointError(true);
+                setFormSuccess(false);
             });
 
     };
@@ -129,6 +141,13 @@ function Contact() {
                             <i className="hn hn-check-circle"></i> SIGNAL RECEIVED: Transmission successful.
                         </div>
 
+                        <div
+                            ref={popupRef}
+                            className={`pixel-error-popup endpoint-error ${endpointError ? "visible" : ""}`}
+                        >
+                            <i className="hn hn-server"></i> TRANSMISSION FAILED: Endpoint unreachable or misconfigured.
+                        </div>
+
 
                         {alertAcknowledged && (
                             <div className="alert-log">
@@ -142,7 +161,7 @@ function Contact() {
                             </h1>
                             <p>Initiating handshake... awaiting your message.</p>
 
-                            <label>Name:</label>
+                            <label className="pt-1">*Name:</label>
                             <input
                                 type="text"
                                 name="name"
@@ -151,7 +170,7 @@ function Contact() {
 
                             />
 
-                            <label>Email:</label>
+                            <label className="pt-1">*Email:</label>
                             <input
                                 type="text"
                                 name="email"
@@ -160,7 +179,7 @@ function Contact() {
 
                             />
 
-                            <label>Message:</label>
+                            <label className="pt-1">*Message:</label>
                             <textarea
                                 name="message"
                                 value={formData.message}

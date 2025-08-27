@@ -15,6 +15,9 @@ import Cplusplus_icon from "../assets/icons/myselfPage/cplusplus.png";
 import Python_icon from "../assets/icons/myselfPage/python.png";
 import jQuery_icon from "../assets/icons/myselfPage/jquery.png";
 import Tailwind_icon from "../assets/icons/myselfPage/tailwind.png";
+import NodeJS_icon from "../assets/icons/myselfPage/nodejs.png";
+import Csharp_icon from "../assets/icons/myselfPage/csharp.png";
+import NextJS_icon from "../assets/icons/myselfPage/nextjs.png";
 
 function Myself() {
   const [activePopup, setActivePopup] = useState(null);
@@ -124,36 +127,30 @@ function Myself() {
 
                   <div className="icon-list">
                     {activePopup === "mastered" && (
-                      <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(64px, 1fr))',
-                        gap: '1rem',
-                        justifyItems: 'center',
-                        maxWidth: '300px',
-                        margin: '0 auto'
-                      }}> {/** You can delete all styles above (these styles on this div) 
-                           you have more icons and it will be arranged better */}
+                      <>
                         <img src={HTML_icon} alt="HTML icon" className="pixel-logo" />
                         <img src={CSS_icon} alt="CSS icon" className="pixel-logo" />
                         <img src={Javascript_icon} alt="Javscript icon" className="pixel-logo" />
                         <img src={Bootstrap_icon} alt="Bootstrap icon" className="pixel-logo-with-title" />
                         <img src={ReactJS_icon} alt="ReactJS icon" className="pixel-logo-with-title" />
                         <img src={Tailwind_icon} alt="Tailwind icon" className="pixel-logo-with-title" />
-                      </div>
+                      </>
                     )}
                     {activePopup === "leveling" && (
                       <>
                         <img src={Java_icon} alt="Java icon" className="pixel-logo" />
                         <img src={ASPNET_icon} alt="ASP.NET icon" className="pixel-logo" />
+                        <img src={Csharp_icon} alt="C# icon" className="pixel-logo" />
                         <img src={SQL_icon} alt="SQL icon" className="pixel-logo" />
                         <img src={MongoDB_icon} alt="MongoDB icon" className="pixel-logo" />
                         <img src={Python_icon} alt="Python icon" className="pixel-logo" />
+                        <img src={NextJS_icon} alt="NextJS icon" className="pixel-logo-with-title" />
                       </>
                     )}
                     {activePopup === "newbie" && (
                       <>
                         <img src={Cplusplus_icon} alt="C++ icon" className="pixel-logo" />
-                        
+                        <img src={NodeJS_icon} alt="NodeJs icon" className="pixel-logo" style={{ width: '80px' }} />
                         <img src={jQuery_icon} alt="jQuery icon" className="pixel-logo" />
                       </>
                     )}
