@@ -201,7 +201,7 @@ function Contact() {
                             <a href="https://www.facebook.com/Stup1dD0g" target="_blank" rel="noopener noreferrer">
                                 <i className="hn hn-facebook-square"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/gia-huy-tang-6bb4181a3/" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/giahuy-tang/" target="_blank" rel="noopener noreferrer">
                                 <i className="hn hn-linkedin"></i>
                             </a>
                             <a href="https://github.com/GiaHuyTang" target="_blank" rel="noopener noreferrer">

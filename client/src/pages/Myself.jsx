@@ -21,6 +21,34 @@ import NextJS_icon from "../assets/icons/myselfPage/nextjs.png";
 
 function Myself() {
   const [activePopup, setActivePopup] = useState(null);
+  const skillCards = [
+    {
+      title: "❄️ Web Wizardry",
+      content: "I craft magical websites, tame backend beasts, and collect rare UI pixels like treasure. Whether it’s frontend, backend, or a fire-breathing bug — if it glitches, I fix it.",
+      className: "web-card"
+    },
+    {
+      title: "🪄 Network Sorcery",
+      content: "I summon networks from OSI layers to AWS VPCs with subnets, gateways, ACLs, and structured cabling. I speak fluent TCP/IP and decode JSON scrolls like ancient runes.",
+      className: "network-card"
+    },
+    {
+      title: "📚 Data Alchemy",
+      content: "When data calls, I wield NumPy, Pandas, and matplotlib — slicing CSVs, scraping the web, and visualizing insights like prophecy. My spells turn raw data into clarity.",
+      className: "data-card"
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? skillCards.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === skillCards.length - 1 ? 0 : prev + 1));
+  };
+
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = portfolio;
@@ -36,9 +64,9 @@ function Myself() {
         <div className="container">
           <div className="row justify-content-center align-items-start g-4">
 
-            {/* Portrait Avatar Card (left side) */}
+
+            {/* === Left Column: Avatar + Download Button === */}
             <div className="col-12 col-md-4 d-flex flex-column align-items-center">
-              {/* Avatar Card */}
               <div className="card portrait-card p-2 shadow pixel-card text-center">
                 <img
                   src={Avatar}
@@ -47,8 +75,6 @@ function Myself() {
                   style={{ height: "220px" }}
                 />
               </div>
-
-              {/* Download Button (Below Avatar) */}
               <div className="mt-3">
                 <button className="download-btn" onClick={handleDownload}>
                   <i className="hn hn-paperclip"></i> Download Portfolio
@@ -56,26 +82,67 @@ function Myself() {
               </div>
             </div>
 
-
-            {/* About + Education Card (right side) */}
+            {/* === Right Column: About + Skills + Education === */}
             <div className="col-12 col-md-8">
               <div className="card about-card p-4 shadow pixel-card">
                 <h2 className="card-title">About Me</h2>
-                <p className="card-text">
-                  Hi! I’m Gia Huy Tang — code wizard at Saskatchewan Polytechnic 🧙‍♂️💻 <br />
-                  I build magical websites, craft software spells, tame bugs, and collect rare UI pixels like treasure chests.
-                  Frontend, backend, or dragon — if it glitches, I fix it.
-                </p>
+                <h3>Hi! I’m Gia Huy Tang — code wizard at Saskatchewan Polytechnic 🧙‍♂️💻</h3>
 
+                <div className="desktop-only">
+                  {/* === Desktop View: 3 Cards === */}
+                  <div className="accordion-container">
+                    <div className="card pixel-card web-card p-3 mb-3">
+                      <h4>🕸️ Web Wizardry</h4>
+                      <p>
+                        I craft magical websites, tame backend beasts, and collect rare UI pixels like treasure.
+                        Whether it’s frontend, backend, or a fire-breathing bug — if it glitches, I fix it.
+                      </p>
+                    </div>
+
+                    <div className="card pixel-card network-card p-3 mb-3">
+                      <h4>📡 Network Sorcery</h4>
+                      <p>
+                        I summon networks from OSI layers to AWS VPCs with subnets, gateways, ACLs, and structured cabling.
+                        I speak fluent TCP/IP and decode JSON scrolls like ancient runes.
+                      </p>
+                    </div>
+
+                    <div className="card pixel-card data-card p-3">
+                      <h4>📊 Data Alchemy</h4>
+                      <p>
+                        When data calls, I wield NumPy, Pandas, and matplotlib — slicing CSVs, scraping the web, and visualizing insights like prophecy.
+                        My spells turn raw data into clarity.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mobile-only">
+                  {/* === Mobile View: Carousel with Arrow Navigation === */}
+                  <div className="skill-carousel text-center">
+                    <div className="carousel-wrapper">
+                      <button className="arrow-btn left" onClick={handlePrev}><i class="hn hn-arrow-left-solid"></i></button>
+
+                      <div className={`carousel-card pixel-card ${skillCards[currentIndex].className}`}>
+                        <h4>{skillCards[currentIndex].title}</h4>
+                        <p>{skillCards[currentIndex].content}</p>
+                      </div>
+
+                      <button className="arrow-btn right" onClick={handleNext}><i class="hn hn-arrow-right-solid"></i></button>
+                    </div>
+
+                  </div>
+                </div>
+
+
+                {/* === Education Section === */}
                 <h3 className="mt-4">Education</h3>
-                <p className="card-text">
+                <p>
                   Saskatchewan Polytechnic <br />
                   Diploma in Business Information System (2024–2027)
                 </p>
               </div>
-
             </div>
-
           </div>
 
           {/* Programming Language */}
@@ -115,10 +182,10 @@ function Myself() {
                   </h3>
                   <p>
                     {activePopup === "mastered" && (
-                      <>Languages I’m confident in and have used in <span style={{whiteSpace: 'nowrap'}}>real-world</span> projects</>
+                      <>Languages I’m confident in and have used in <span style={{ whiteSpace: 'nowrap' }}>real-world</span> projects</>
                     )}
                     {activePopup === "leveling" && (
-                      <>Languages I am actively learning, building with, or gaining <span style={{whiteSpace: 'nowrap'}}>hands-on</span> experience with</>
+                      <>Languages I am actively learning, building with, or gaining <span style={{ whiteSpace: 'nowrap' }}>hands-on</span> experience with</>
                     )}
                     {activePopup === "newbie" && (
                       <>Languages I have just learned the foundations and haven't built anything with them yet</>

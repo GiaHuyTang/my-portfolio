@@ -553,6 +553,73 @@ body::before {
   transform: scale(1.01);
 }
 
+.web-card {
+  border-left: 6px solid #ff66cc;
+  background: linear-gradient(135deg, #2e1a3a, #1a1a2e);
+  box-shadow: 0 0 12px #ff66cc;
+}
+
+.network-card {
+  border-left: 6px solid #66ccff;
+  background: linear-gradient(135deg, #1a2e3a, #1a1a2e);
+  box-shadow: 0 0 12px #66ccff;
+}
+
+.data-card {
+  border-left: 6px solid #66ff99;
+  background: linear-gradient(135deg, #1a3a2e, #1a1a2e);
+  box-shadow: 0 0 12px #66ff99;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: visible;
+  text-align: center;
+}
+
+.carousel-card {
+  display: inline-block;
+  max-width: 100%;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #1a1a2e, #2e1a3a);
+  box-shadow: 0 0 12px #ff66cc;
+  border-left: 6px solid #ff66cc;
+  z-index: 1;
+  text-align: left;
+}
+
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #00ffff;
+  z-index: 2;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.arrow-btn.left {
+  left: -2rem;
+}
+
+.arrow-btn.right {
+  right: -2rem;
+}
+
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  display: block;
+}
+
 /* === Pixel Skill Popup === */
 .skill-buttons button {
   background-color: #111122;
@@ -986,6 +1053,7 @@ body::before {
   border-color: #ff0033;
   box-shadow: 0 0 8px #ff0033;
 }
+
 .alert-log {
   position: absolute;
   top: 6rem;
@@ -1004,9 +1072,17 @@ body::before {
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .pixel-success-popup {
@@ -1031,9 +1107,10 @@ body::before {
   display: block;
 }
 
-.social-title{
+.social-title {
   margin-top: 6rem;
 }
+
 .social-icons a {
   margin: 0 10px;
   color: #555;
@@ -1043,7 +1120,7 @@ body::before {
 
 .social-icons a:hover {
   transform: scale(1.2);
-  color: #007bff; 
+  color: #007bff;
 }
 
 
@@ -1124,6 +1201,14 @@ body::before {
     margin-top: 7rem;
   }
 
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
   .contact-form {
     padding: 1rem 1.2rem 1.2rem 1.2rem;
     margin: 10rem 1rem 2rem 1rem;
@@ -1151,8 +1236,8 @@ body::before {
     font-size: 1rem;
     padding: 0.6rem 1rem;
   }
-  
-  .pixel-error-popup{
+
+  .pixel-error-popup {
     font-size: 0.8rem;
   }
 

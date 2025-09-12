@@ -6,10 +6,10 @@ import TheMovieDB_Img from "../assets/icons/projectsPage/theMoviedb.png";
 const projects = [
     {
         id: "proj1",
-        name: "F1 Tracker",
+        name: "F1 Tracker (Idea)",
         description:
-            "A React + API project that fetches weather data from OpenWeatherMap and shows real-time weather updates.",
-        tech: ["React", "OpenWeather API", "CSS"],
+            "A React + API project that fetches F1 data from F1api.dev and shows all F1 informations including the previous races and live updates of the ongoing race with rankings of the racers and race information.",
+        tech: ["HTML", "CSS", "JavaSript", "ReactJS", "Tailwind", "F1 API"],
         image: F1Tracker_Img,
     },
     {
@@ -17,7 +17,7 @@ const projects = [
         name: "Portfolio Site",
         description:
             "This portfolio site was crafted with React, deployed via Vercel, and styled with nostalgic pixel aesthetics.",
-        tech: ["React", "JavaScript", "HTML", "CSS", "Vercel", "Bootstrap"],
+        tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "ReactJS", "Vercel"],
         image: Portfolio_Img,
         
     },
@@ -25,8 +25,8 @@ const projects = [
         id: "proj3",
         name: "The Movie Database",
         description:
-            "A website using themoviedb API to show popular, NowPlaying or Upcoming movies.",
-        tech: ["ASP.NET", "SQL", "C#"],
+            "A website using themoviedb API to show popular, NowPlaying or Upcoming movies. It has 2 versions: ReactJS and ASP.NET.",
+        tech: [ "JavaScript", "HTML", "CSS","ASP.NET", "SQL", "C#", "ReactJS", "Bootstrap", "TMDB API"],
         image: TheMovieDB_Img,
     },
 ];
